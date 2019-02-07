@@ -1,3 +1,9 @@
+# Develop
+Requires NodeJs to be installed.
+- Run 'yarn' in both the root directory and clients directory.
+To run this application locally cd into the root directory of the project inside in the terminal run 'node server.js' to server up the campaigns and cards endpoints. To run the front end, cd into clients and run 'yarn start'.
+
+
 # Frontend Coding Problem
 
 This is an Express + ReactJS + HTML / CSS coding problem. This task is divided in 4 parts. First 3 are mandatory and 4th part is a bonus task. Put your code on Github and submit a repository link.
