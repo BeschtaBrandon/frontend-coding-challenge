@@ -29,9 +29,8 @@ What we are looking for:
 
 ## 3. Implement Functionality of Moving Cards Between States
 
-The cards are in one of the following states: `'saved','pending','active','paused','expired','declined','terminated'` based on the value in the `currentWorkflow` field. Implement functionality that moves the cards between states. Mock this (or as bonus in #4 implement this) as a process that takes 5+ seconds to complete. The state diagram is as follows:
+The cards are in one of the following states: `'saved','pending','active','paused','expired','declined','terminated'` based on the value in the `currentWorkflow` field. Implement functionality that moves the cards between states. Mock this (or as bonus in #4 implement this) as a process that takes 5+ seconds to complete.
 
-![State Diagram](/state-diagram.png)
 
 What we are looking for:
 
