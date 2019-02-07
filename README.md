@@ -1,16 +1,15 @@
-# (Bonus) Complete - Express Server
-
 # Develop
 Requires NodeJs to be installed.
 - Run 'yarn' in both the root directory and clients directory.
-To run this application locally cd into the root directory of the project inside in the terminal run 'node server.js' to server up the campaigns and cards endpoints. To run the front end, cd into clients and run 'yarn start'.
+To run this application locally cd into the root directory of the project inside in the terminal run 'node server.js'. To run the front end, cd into clients and run 'yarn start'.
 
+Navigate to http://localhost:3000/
 
 # Frontend Coding Problem
 
 This is an Express + ReactJS + HTML / CSS coding problem. This task is divided in 4 parts. First 3 are mandatory and 4th part is a bonus task. Put your code on Github and submit a repository link.
 
-## 1. Implement Responsive Design using Bootstrap or Foundation
+## 1. Implement Responsive Design using Bootstrap or Foundation - Done
 
 1. Implement design of `Dashboard.jpg` attached using Bootstrap or Foundation. Cards data is provided in `cards.json` attached
 2. The design should be responsive down to iPhone 5. You are not provided mobile designs. Please implement responsive design according to your own intuition
@@ -45,7 +44,7 @@ What we are looking for:
 * The ability to move items through a set of states.
 * Seing how well user (micro) interactions are handled (especially when completion of the interaction is not instant)
 
-## 4. (Bonus) Implement basic NodeJS express server
+## 4. (Bonus) Implement basic NodeJS express server - Done
 
 Instead of hardcoding `campaigns.json` and `cards.json` in frontend, put them at backend and write API's to fetch campaigns dropdown data and cards from backend.
 
