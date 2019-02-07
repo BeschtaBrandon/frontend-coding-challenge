@@ -36,7 +36,7 @@ class NavBar extends Component {
                       <i className="fas fa-angle-right text-danger"></i>
                     </Fragment>;
 
-    const pill = <div><Badge pill variant="danger">{date.getDay()}d</Badge></div>
+    const pill = <div><Badge pill variant="danger">{date.getDay()}d</Badge></div>;
     return (
       <Navbar className="col-xs-12" bg="light" expand="lg">
         <Nav className="campaign">

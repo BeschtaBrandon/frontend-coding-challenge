@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Cards} from 'react-bootstrap';
+import {Card, ProgressBar} from 'react-bootstrap';
+
+import './Cards.css';
 
 class Cards extends Component {
 
@@ -24,10 +26,34 @@ class Cards extends Component {
     return body;
   };
 
+
+  renderCards = () => {
+
+    return (
+      <div className="row">
+        {this.state.cardsInfo.map((card, key) => {
+          return (
+            <Card key={key} className="card col-xs-4" style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={card.primaryMediaUrl} />
+              <Card.Body>
+                <Card.Title>{card.cardTitle}</Card.Title>
+                <Card.Text>
+                  {card.cardDescription}
+                </Card.Text>
+                <ProgressBar now={card.likes} />
+              </Card.Body>
+              <Card.Footer className="text-muted"><i class="fas fa-user-friends"></i>{card.shares}<i class="far fa-eye"></i>{card.views}</Card.Footer>
+            </Card>
+          );
+        })}
+      </div>
+    )
+  }
+
   render() {
     return (
-      <div>
-
+      <div className="cards container">
+        {this.renderCards()}
       </div>
     );
   }
