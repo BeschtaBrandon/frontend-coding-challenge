@@ -1,6 +1,6 @@
 # Frontend Coding Problem
 
-This is an Angular 2+ / ReactJS + HTML / CSS coding problem. This task is divided in 4 parts. First 3 are mandatory and 4th part is a bonus task. Put your code on Github and submit a repository link. 
+This is an Express + ReactJS + HTML / CSS coding problem. This task is divided in 4 parts. First 3 are mandatory and 4th part is a bonus task. Put your code on Github and submit a repository link.
 
 ## 1. Implement Responsive Design using Bootstrap or Foundation
 
@@ -20,7 +20,7 @@ What we are looking for:
 
 ## 2. Implement Functionality of Campaigns Filter in AngularJS 2.0 or ReactJS
 
-User should be able to filter cards shown based on the selected campaign. Dropdown should also provide "All Campaigns" selection which should show all campaigns. Please implement a component based structure. Use campaign ID field in `cards.json` and `campaigns.json` to correlate cards with selected campaign. The rest of fields on the card need not to be functional. 
+User should be able to filter cards shown based on the selected campaign. Dropdown should also provide "All Campaigns" selection which should show all campaigns. Please implement a component based structure. Use campaign ID field in `cards.json` and `campaigns.json` to correlate cards with selected campaign. The rest of fields on the card need not to be functional.
 
 What we are looking for:
 
@@ -40,10 +40,9 @@ What we are looking for:
 
 ## 4. (Bonus) Implement basic NodeJS express server
 
-Instead of hardcoding `campaigns.json` and `cards.json` in frontend, put them at backend and write API's to fetch campaigns dropdown data and cards from backend. 
+Instead of hardcoding `campaigns.json` and `cards.json` in frontend, put them at backend and write API's to fetch campaigns dropdown data and cards from backend.
 
 What we are looking for:
 
 * RESTful use of API's
-* Usage of API's in Angular 2+ / React JS
-
+* Usage of API's in React JS
