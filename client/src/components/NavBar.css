@@ -1,0 +1,31 @@
+.calendar-date {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.fas {
+  margin: 8px;
+}
+
+.btn {
+  border: none;
+  color: #4f4f4f;
+  height: 40px;
+}
+.btn:hover {
+  border: node;
+  background: #f8f9fa;
+  color: #4f4f4f;
+}
+
+.campaign {
+  margin-left: 25px;
+}
+
+.searchcalendar {
+  margin-right: 25px
+}
+
+.danger {
+  text: #FFF;
+}
