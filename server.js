@@ -26,7 +26,3 @@ app.get('/getCards', (req, res) => {
   res.header("Content-Type",'application/json');
   res.send(JSON.stringify(cards));
 });
-
-app.get('/getExpress', (req, res) => {
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-});
