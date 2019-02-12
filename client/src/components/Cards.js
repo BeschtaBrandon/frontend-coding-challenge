@@ -61,10 +61,7 @@ class Cards extends Component {
                 </Card.Body>
                 <Card.Footer className="text-muted">
                   <i className="fas fa-user-friends"></i>{card.shares}
-                  <div className="pull-right">
-                    <i className="far fa-eye"></i>
-                    {card.views}
-                  </div>
+                  <i className="far fa-eye"></i>{card.views}
                 </Card.Footer>
             </Card>
             </div>
