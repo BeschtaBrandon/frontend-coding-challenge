@@ -1,19 +1,21 @@
-.cards {
-  margin-left: 25px;
-  margin: 5px;
-}
-
 .card {
-  margin-bottom: .5em;
-  flex: 0 0 40%;
+  margin: .5em;
+  flex: 0 0 25%;
   min-height: 10em;
   transition: transform .2s;
 }
 
 .card.card-empty {
+  margin: .5em;
+  margin-left: 25px;
+  flex: 0 0 25%;
+  min-height: 345px;
+  width: auto;
+  transition: transform .2s;
   border: 2px dashed $thumbnail-border;
   position: relative;
   text-align: center;
+  justify-content: center;
   opacity: .8;
   padding: .1em;
   border-radius: 5px;
@@ -21,7 +23,6 @@
   cursor: pointer;
 
   div {
-    align-items: center;
 
     span {
       font-size: 2.5em;
@@ -35,4 +36,8 @@
 
 p {
   margin: 10px;
+}
+
+.fa.fa-plus-circle {
+  height: 40px;
 }

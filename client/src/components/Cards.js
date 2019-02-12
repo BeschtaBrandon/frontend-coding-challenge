@@ -30,12 +30,14 @@ class Cards extends Component {
 
   renderEmptyCard = () => {
     return (
-      <a className="card card-empty">
-        <div>
-          <span className="fa fa-plus"/>
-          <h4>Create a Service Card</h4>
-        </div>
-      </a>
+      <div className="row">
+        <a className="card card-empty col-xs-8 col-sm-6 col-md-3">
+          <div>
+            <i className="fa fa-plus-circle"></i>
+            <h4>Create a Service Card</h4>
+          </div>
+        </a>
+      </div>
     )
   }
 
@@ -44,20 +46,28 @@ class Cards extends Component {
     const cards = currFilter ? this.state.cardsInfo.filter(ele => ele.campaignId === currFilter) : this.state.cardsInfo;
 
     return (
-      <div className="row">
+      <div className="row justify-content-md-center">
         {cards.map((card, key) => {
           return (
-            <Card key={key} className="card col-xs-4" style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={card.primaryMediaUrl} />
-              <Card.Body>
-                <Card.Text>
-                  {card.cardDescription}
-                </Card.Text>
-                <p><small>{card.listOfPlans[0].price.currencySymbol} {card.listOfPlans[0].price.amount} / Month</small></p>
-                <ProgressBar now={card.likes} />
-              </Card.Body>
-              <Card.Footer className="text-muted"><i className="fas fa-user-friends"></i>{card.shares}<i className="far fa-eye"></i>{card.views}</Card.Footer>
+            <div className="col-xs-8 col-sm-6 col-md-3" key={key}>
+              <Card>
+                <Card.Img variant="top" src={card.primaryMediaUrl} />
+                <Card.Body>
+                  <Card.Text>
+                    {card.cardDescription}
+                  </Card.Text>
+                  <p><small>{card.listOfPlans[0].price.currencySymbol} {card.listOfPlans[0].price.amount} / Month</small></p>
+                  <ProgressBar now={card.likes} />
+                </Card.Body>
+                <Card.Footer className="text-muted">
+                  <i className="fas fa-user-friends"></i>{card.shares}
+                  <div className="pull-right">
+                    <i className="far fa-eye"></i>
+                    {card.views}
+                  </div>
+                </Card.Footer>
             </Card>
+            </div>
           );
         })}
       </div>
