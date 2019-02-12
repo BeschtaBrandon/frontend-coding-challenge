@@ -4,7 +4,33 @@
 }
 
 .card {
-  margin: 10px;
+  margin-bottom: .5em;
+  flex: 0 0 40%;
+  min-height: 10em;
+  transition: transform .2s;
+}
+
+.card.card-empty {
+  border: 2px dashed $thumbnail-border;
+  position: relative;
+  text-align: center;
+  opacity: .8;
+  padding: .1em;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+
+  div {
+    align-items: center;
+
+    span {
+      font-size: 2.5em;
+    }
+
+    h4 {
+      margin-top: .3em;
+    }
+  }
 }
 
 p {

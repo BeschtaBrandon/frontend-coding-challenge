@@ -7,6 +7,7 @@ class Cards extends Component {
 
   state = {
     cardsInfo: [],
+    currentCampaign: '',
   };
 
   componentDidMount() {
@@ -15,7 +16,8 @@ class Cards extends Component {
       .then(res => this.setState({ cardsInfo: res }))
       .catch(err => console.log(err));
   }
-    // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
+
+  // Get request for fetching cards data.
   callCardsAPI = async () => {
     const response = await fetch('/getCards');
     const body = await response.json();
@@ -26,23 +28,35 @@ class Cards extends Component {
     return body;
   };
 
+  renderEmptyCard = () => {
+    return (
+      <a className="card card-empty">
+        <div>
+          <span className="fa fa-plus"/>
+          <h4>Create a Service Card</h4>
+        </div>
+      </a>
+    )
+  }
 
   renderCards = () => {
+    const currFilter = this.props.currentCampaign;
+    const cards = currFilter ? this.state.cardsInfo.filter(ele => ele.campaignId === currFilter) : this.state.cardsInfo;
 
     return (
       <div className="row">
-        {this.state.cardsInfo.map((card, key) => {
+        {cards.map((card, key) => {
           return (
             <Card key={key} className="card col-xs-4" style={{ width: '18rem' }}>
               <Card.Img variant="top" src={card.primaryMediaUrl} />
               <Card.Body>
-                <Card.Title>{card.cardTitle}</Card.Title>
                 <Card.Text>
                   {card.cardDescription}
                 </Card.Text>
+                <p><small>{card.listOfPlans[0].price.currencySymbol} {card.listOfPlans[0].price.amount} / Month</small></p>
                 <ProgressBar now={card.likes} />
               </Card.Body>
-              <Card.Footer className="text-muted"><i class="fas fa-user-friends"></i>{card.shares}<i class="far fa-eye"></i>{card.views}</Card.Footer>
+              <Card.Footer className="text-muted"><i className="fas fa-user-friends"></i>{card.shares}<i className="far fa-eye"></i>{card.views}</Card.Footer>
             </Card>
           );
         })}
@@ -54,6 +68,7 @@ class Cards extends Component {
     return (
       <div className="cards container">
         {this.renderCards()}
+        {this.renderEmptyCard()}
       </div>
     );
   }

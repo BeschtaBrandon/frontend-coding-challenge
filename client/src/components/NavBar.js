@@ -6,6 +6,8 @@ class NavBar extends Component {
 
   state = {
     campaigns: [],
+    currentCampaign: '',
+    isOpen: false,
   };
 
   componentDidMount() {
@@ -25,6 +27,12 @@ class NavBar extends Component {
     return body;
   };
 
+  handleUpdate = (e) => {
+    const campaignId = e.target.attributes.getNamedItem('campaignid').value;
+    this.props.updateCurrentCampaign(campaignId);
+    this.setState({currentCampaign: campaignId});
+  }
+
   renderNavbar = () => {
     const date = new Date();
     const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -32,7 +40,7 @@ class NavBar extends Component {
     const calendar = <Fragment>
                       <i className="fas fa-angle-left text-danger"></i>
                       <i className="far fa-calendar text-danger"></i>
-                      <p className="calendar-date text-danger">Today, {months[date.getMonth()]} {date.getDay()}</p>
+                      <p className="calendar-date text-danger">Today, {months[date.getMonth()]} {date.getDate()}</p>
                       <i className="fas fa-angle-right text-danger"></i>
                     </Fragment>;
 
@@ -42,7 +50,7 @@ class NavBar extends Component {
         <Nav className="campaign">
           <NavDropdown title="All Campaigns" id="basic-nav-dropdown">
             {this.state.campaigns.map((ele, key) => {
-              return <NavDropdown.Item key={ele.id}>{ele.campaignName}</NavDropdown.Item>
+              return <NavDropdown.Item onClick={this.handleUpdate} key={ele.id} campaignid={ele.id} value={ele.id}>{ele.campaignName}</NavDropdown.Item>
             })}
           </NavDropdown>
           <div>
